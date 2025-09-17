@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/script.js" defer></script>
+
+
+    <title>Controle - Contas a Receber</title>
+</head>
+
+<body>
+    <h1>Controle de Cobrança</h1>
+
+    <nav>
+        <button id="btnNegociacao">Negociação</button>
+        <button id="btnJudicial">Judicial</button>
+        <button id="btnPainel">Painel</button>
+    </nav>
+
+    <section id="negociacaoSection">
+        <h2>Negociação</h2>
+        <form id="formNegociacao">
+            <input type="text" id="codigo" placeholder="Código do Cliente" required>
+            <input type="text" id="razao" placeholder="Razão Social" required>
+            <input type="number" id="valorOriginal" placeholder="Valor Original" required>
+            <input type="number" id="valorAcordo" placeholder="Valor do Acordo" required>
+            <input type="number" id="parcelas" placeholder="Número de Parcelas" required>
+            <button type="submit">Adicionar Negociação</button>
+        </form>
+        <table id="tabelaNegociacao">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Razão Social</th>
+                    <th>Valor Original</th>
+                    <th>Valor Acordo</th>
+                    <th>Diferença %</th>
+                    <th>Nº Parcelas</th>
+                    <th>Parcelas Pagas</th>
+                    <th>Valor Pago</th>
+                    <th>Valor Parcela</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="judicialSection" style="display:none;">
+        <h2>Judicial</h2>
+        <form id="formJudicial">
+            <input type="text" id="codigoJud" placeholder="Código do Cliente" required>
+            <input type="date" id="dataInclusao" required>
+            <input type="number" id="valorDivida" placeholder="Valor da Dívida" required>
+            <input type="text" id="descricaoGasto" placeholder="Descrição do Gasto">
+            <input type="number" id="valorGasto" placeholder="Valor do Gasto">
+            <button type="submit">Adicionar Judicial</button>
+        </form>
+        <table id="tabelaJudicial">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Data de Inclusão</th>
+                    <th>Valor da Dívida</th>
+                    <th>Gastos</th>
+                    <th>Valor Pago</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="painelSection" style="display:none;">
+        <h2>Painel Geral</h2>
+        <div id="resumoGeral">
+            <p>Total Recebido:</p>
+            <p>Em Andamento:</p>
+            <p>Judicial:</p>
+        </div>
+        <table id="tabelaPainel">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Razão Social</th>
+                    <th>Valor Original</th>
+                    <th>Valor Acordo / Dívida</th>
+                    <th>Diferença %</th>
+                    <th>Nº Parcelas</th>
+                    <th>Parcelas Pagas</th>
+                    <th>Valor Pago / Gastos</th>
+                    <th>Valor Parcela</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <div id="modalPagamentos" style="display:none;">
+        <h3>Adicionar Pagamento</h3>
+        <input type="date" id="dataPagamento">
+        <input type="number" id="valorPagamento" placeholder="Valor">
+        <button id="btnAdicionarPagamento">Adicionar</button>
+        <button id="btnFecharModal">Fechar</button>
+        <ul id="listaPagamentos"></ul>
+    </div>
+
+    <div id="modalGastos" style="display:none;">
+        <h3>Adicionar Gasto Judicial</h3>
+        <input type="text" id="descricaoGastoModal" placeholder="Descrição do Gasto">
+        <input type="number" id="valorGastoModal" placeholder="Valor">
+        <button id="btnAdicionarGasto">Adicionar</button>
+        <button id="btnFecharGastoModal">Fechar</button>
+        <ul id="listaGastos"></ul>
+    </div>
+
+    <p class="footer">&copy;João Victor F de Souza</p>
+</body>
+
+</html>
